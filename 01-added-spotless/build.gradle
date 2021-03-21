@@ -1,4 +1,5 @@
 plugins {
+    id 'com.diffplug.spotless' version '5.11.0'
     id 'org.springframework.boot' version '2.4.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
@@ -6,7 +7,6 @@ plugins {
 
 group 'com.mingyuchoo'
 version '1.0-SNAPSHOT'
-sourceCompatibility= '1.8'
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -22,5 +22,23 @@ dependencies {
 }
 
 test {
+    dependsOn 'spotlessApply'
     useJUnitPlatform()
+}
+
+spotless {
+    format 'misc', {
+        target '**/*.gradle', '**/*.yaml', '**/*.yml', '**/*.md', '**/.gitignore'
+        trimTrailingWhitespace()
+        indentWithSpaces(2)
+        endWithNewline()
+    }
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat('1.7').aosp()
+        indentWithSpaces(4)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }
