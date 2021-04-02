@@ -22,3 +22,10 @@
   - `Srping Data JPA`
   - `H2 Database`
   - `Spring REST Docs`
+
+## How to run
+
+- `./gradlew test`
+- `./gradlew build`
+- `./gradlew bootRun`
+- `http://localhost:8080/`

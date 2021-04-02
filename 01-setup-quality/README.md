@@ -26,3 +26,10 @@
 ## Additional Dependencies
 
 - `com.diffplug.spotless`
+
+## How to run
+
+- `./gradlew test`
+- `./gradlew build`
+- `./gradlew bootRun`
+- `http://localhost:8080/`
