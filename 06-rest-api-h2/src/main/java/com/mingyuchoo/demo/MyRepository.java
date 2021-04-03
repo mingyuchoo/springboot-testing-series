@@ -1,7 +1,9 @@
 package com.mingyuchoo.demo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface MyRepository extends JpaRepository<MyEntity, Integer> {
-    MyEntity findById(int id);
+    public MyEntity findById(int id);
 }
