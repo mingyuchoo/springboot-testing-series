@@ -1,4 +1,4 @@
-# 02-rest-api
+# 05-rest-api-entity
 
 ## How to Set up in `https://start.spring.io`
 

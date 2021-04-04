@@ -1,4 +1,4 @@
-# 02-rest-api
+# 02-rest-api-controller
 
 ## How to Set up in `https://start.spring.io`
 
