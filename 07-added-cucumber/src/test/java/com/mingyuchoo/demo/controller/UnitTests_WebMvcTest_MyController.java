@@ -18,7 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(MyController.class) // USE FOR UNIT TESTING OF CONTROLLER LAYER
-public class MyController_WebMvcTest_UnitTests {
+public class UnitTests_WebMvcTest_MyController {
 
     @Autowired private MockMvc mockMvc;
 

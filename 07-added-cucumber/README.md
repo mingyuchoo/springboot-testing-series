@@ -1,4 +1,4 @@
-# 06-rest-api-h2
+# 07-added-cucumber
 
 ## How to Set up in `https://start.spring.io`
 
@@ -25,13 +25,22 @@
 
 ## Additional Dependencies
 
+- `org.sonarqube`
+- `jacoco`
 - `com.diffplug.spotless`
+- `io.cucumber:cucumber-java`
+- `io.cucumber:cucumber-junit`
+- `io.cucumber:cucumber-spring`
 
 ## How to run
 
-- `./gradlew test`
-- `./gradlew build`
-- `./gradlew bootRun`
+- `./gradlew cucumber`: run cucumber acceptance test
+- `./gradlew test`: run unit test
+- `./gradlew build`: run build
+- `./gradlew bootRun`: run app
+
+## Check API
+
 - `http://localhost:8080/api/vi/`
 - `http://localhost:8080/api/vi/hello`
 

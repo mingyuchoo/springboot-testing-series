@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class MyResponseModel_UnitTests {
+class UnitTests_MyResponseModel {
 
     private MyResponseModel myResponseModel = new MyResponseModel();
 

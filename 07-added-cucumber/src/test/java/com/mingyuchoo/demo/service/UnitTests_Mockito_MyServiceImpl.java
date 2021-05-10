@@ -12,7 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class MyServiceImpl_Mockito_UnitTests {
+public class UnitTests_Mockito_MyServiceImpl {
 
     @Mock private MyRepository myRepository;
 

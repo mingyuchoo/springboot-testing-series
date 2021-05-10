@@ -14,7 +14,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 @ActiveProfiles("test") // application-test.yaml
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // USE FOR INTEGRATION TESTING
-public class Application_WebTestClient_IntegrationTests {
+public class IntegrationTests_WebTestClient_Application {
 
     @Autowired private Environment environment;
     @Autowired private WebTestClient webTestClient;

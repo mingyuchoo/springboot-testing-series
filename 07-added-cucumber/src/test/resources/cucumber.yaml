@@ -1,4 +1,0 @@
-cucumber:
-  publish:
-    enabled: false
-    quiet: false

@@ -13,7 +13,7 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test") // application-test.yaml
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // USE FOR INTEGRATION TESTING
-public class Application_TestRestTemplate_IntegrationTests {
+public class IntegrationTests_TestRestTemplate_Application {
 
     @Autowired private Environment environment;
     @Autowired TestRestTemplate testRestTemplate;
