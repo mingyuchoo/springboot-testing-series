@@ -15,8 +15,6 @@ public class Application {
 
     @Bean
     public CommandLineRunner demo(MyRepository repository) {
-        return args -> {
-            repository.save(new MyEntity("Jack", "Bauer"));
-        };
+        return args -> repository.save(new MyEntity("Jack", "Bauer"));
     }
 }
