@@ -34,28 +34,20 @@ public class Application_WebTestClient_IntegrationTests {
     @Test
     public void home() throws Exception {
         webTestClient
-                .get()
-                .uri("/api/v1")
+                .get().uri("/api/v1")
                 .exchange()
-                .expectStatus()
-                .isOk()
-                .expectHeader()
-                .contentType(MediaType.APPLICATION_JSON)
-                .expectBody(String.class)
-                .value(containsStringIgnoringCase("home"));
+                .expectStatus().isOk()
+                .expectHeader().contentType(MediaType.APPLICATION_JSON)
+                .expectBody(String.class).value(containsStringIgnoringCase("home"));
     }
 
     @Test
     public void hello() throws Exception {
         webTestClient
-                .get()
-                .uri("api/v1/hello")
+                .get().uri("api/v1/hello")
                 .exchange()
-                .expectStatus()
-                .isOk()
-                .expectHeader()
-                .contentType(MediaType.APPLICATION_JSON)
-                .expectBody(String.class)
-                .value(containsStringIgnoringCase("jack"));
+                .expectStatus().isOk()
+                .expectHeader().contentType(MediaType.APPLICATION_JSON)
+                .expectBody(String.class).value(containsStringIgnoringCase("jack"));
     }
 }

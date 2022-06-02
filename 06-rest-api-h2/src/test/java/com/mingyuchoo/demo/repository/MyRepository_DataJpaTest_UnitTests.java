@@ -18,7 +18,11 @@ public class MyRepository_DataJpaTest_UnitTests {
     @Test
     public void findById() throws Exception {
         // Given
-        MyEntity myEntity = MyEntity.builder().firstName("Hello").lastName("World").build();
+        MyEntity myEntity = MyEntity.builder()
+                                    .firstName("Hello")
+                                    .lastName("World")
+                                    .build();
+
         // When
         testEntityManager.persist(myEntity);
 

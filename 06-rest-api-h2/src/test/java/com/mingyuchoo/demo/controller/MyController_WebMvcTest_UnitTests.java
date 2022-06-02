@@ -29,9 +29,10 @@ public class MyController_WebMvcTest_UnitTests {
     @Test
     public void home() throws Exception {
         mockMvc.perform(get("/api/v1"))
-                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsStringIgnoringCase("home")));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(containsStringIgnoringCase("home")))
+                .andDo(print());
     }
 
     @Test
@@ -41,6 +42,7 @@ public class MyController_WebMvcTest_UnitTests {
 
         mockMvc.perform(get("/api/v1/hello"))
                 .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().string(containsStringIgnoringCase("hello")))
                 .andDo(print());
     }

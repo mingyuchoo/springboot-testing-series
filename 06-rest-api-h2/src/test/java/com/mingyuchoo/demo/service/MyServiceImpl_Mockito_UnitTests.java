@@ -20,10 +20,13 @@ public class MyServiceImpl_Mockito_UnitTests {
 
     @Test
     public void get() throws Exception {
+
         int id = 1;
+
         when(myRepository.findById(id)).thenReturn(new MyEntity("Hello", "World"));
 
         MyEntity myEntity = myService.get();
+
         assertThat(myEntity.getFirstName()).isEqualTo("Hello");
         assertThat(myEntity.getLastName()).isEqualTo("World");
     }
