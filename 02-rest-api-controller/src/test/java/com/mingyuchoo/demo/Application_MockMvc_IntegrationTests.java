@@ -38,9 +38,9 @@ public class Application_MockMvc_IntegrationTests {
 
     @Test
     public void home() throws Exception {
-        mockMvc.perform(get("/api/v1").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().string(containsString("home")))
                 .andDo(print());
     }

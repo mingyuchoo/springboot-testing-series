@@ -36,7 +36,7 @@ public class Application_MockMvc_IntegrationTests {
 
     @Test
     public void home() throws Exception {
-        mockMvc.perform(get("/api/v1").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsStringIgnoringCase("home")));
