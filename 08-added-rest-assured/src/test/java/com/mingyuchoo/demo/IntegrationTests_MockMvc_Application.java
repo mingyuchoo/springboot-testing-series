@@ -45,7 +45,7 @@ public class IntegrationTests_MockMvc_Application {
 
     @Test
     public void hello() throws Exception {
-        mockMvc.perform(get("/api/v1/hello").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1/hello"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.success").value(true));

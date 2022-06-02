@@ -39,9 +39,9 @@ public class MyController_WebMvcTest_UnitTests {
        
         when(myService.get()).thenReturn(new MyEntity("Hello", "World"));
 
-        mockMvc.perform(get("/api/v1/hello").accept(MediaType.APPLICATION_JSON))
-                .andDo(print())
+        mockMvc.perform(get("/api/v1/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsStringIgnoringCase("hello")));
+                .andExpect(content().string(containsStringIgnoringCase("hello")))
+                .andDo(print());
     }
 }
