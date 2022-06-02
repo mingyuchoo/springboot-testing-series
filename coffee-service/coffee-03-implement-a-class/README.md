@@ -28,16 +28,21 @@
 ### 4. changed `application.properties` to `application.yaml`
 
 ```yaml
+---
+server:
+  servlet:
+    encoding:
+      force-response: true
+	  
 spring:
   main:
-    banner-mode: "off"
+    banner-mode: off
 
 logging:
   level:
     root: INFO
-    org:
-      springframework: ERROR
-      hibernate: ERROR
+    org.springframework: ERROR
+    org.hibernate: ERROR
 ```
 
 ---
