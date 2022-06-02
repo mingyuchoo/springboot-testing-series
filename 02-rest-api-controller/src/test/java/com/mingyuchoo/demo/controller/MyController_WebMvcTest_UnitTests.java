@@ -27,7 +27,7 @@ public class MyController_WebMvcTest_UnitTests {
 
     @Test
     public void hello() throws Exception {
-        mockMvc.perform(get("api/v1/hello").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1/hello").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello")));
