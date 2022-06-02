@@ -1,6 +1,7 @@
 package com.mingyuchoo.demo;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,7 @@ public class Application_TestRestTemplate_IntegrationTests {
 
     @Test
     public void hello() throws Exception {
-        String result = testRestTemplate.getForObject("api/v1/hello", String.class);
+        String result = testRestTemplate.getForObject("/api/v1/hello", String.class);
         assertThat(result).contains("Hello");
     }
 }
