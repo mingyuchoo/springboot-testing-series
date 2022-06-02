@@ -4,7 +4,7 @@
 
 - Project: `Gradle Project`
 - Language: `Java`
-- Spring Boot: `2.4.4`
+- Spring Boot: `2.7.0`
 - Project Metadata:
 
   - Group: `com.mingyuchoo`
@@ -13,7 +13,7 @@
   - Description: `<description>`
   - Package name: `com.mingyuchoo.<app-name>`
   - Packagin: `Jar`
-  - Java: `8`
+  - Java: `11`
 
 - Dependencies:
   - `Srping Boot DevTools`
