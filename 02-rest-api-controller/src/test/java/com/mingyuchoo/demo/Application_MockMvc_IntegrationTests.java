@@ -1,6 +1,7 @@
 package com.mingyuchoo.demo;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -31,8 +32,8 @@ public class Application_MockMvc_IntegrationTests {
 
     @Test
     public void environment() {
-        System.out.println(">>>>> " + environment.getProperty("first-name"));
-        System.out.println(">>>>> " + environment.getProperty("last-name"));
+        assertEquals("Tom", environment.getProperty("first-name"));
+        assertEquals("Hanks", environment.getProperty("last-name"));
     }
 
     @Test

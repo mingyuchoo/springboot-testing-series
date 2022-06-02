@@ -25,8 +25,8 @@ public class IntegrationTests_TestRestTemplate_Application {
 
     @Test
     public void environment() {
-        System.out.println(">>>>> " + environment.getProperty("first-name"));
-        System.out.println(">>>>> " + environment.getProperty("last-name"));
+        assertEquals("Tom", environment.getProperty("first-name"));
+        assertEquals("Hanks", environment.getProperty("last-name"));
     }
 
     @Test
