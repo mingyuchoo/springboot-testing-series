@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @AutoConfigureMockMvc
 @ActiveProfiles("test") // application-test.yaml
-@SpringBootTest // USE FOR INTEGRATION TESTING
+@SpringBootTest
 public class Application_MockMvc_IntegrationTests {
 
     @Autowired private Environment environment;
