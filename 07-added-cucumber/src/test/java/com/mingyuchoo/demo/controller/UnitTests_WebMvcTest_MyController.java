@@ -21,7 +21,6 @@ import org.springframework.test.web.servlet.MockMvc;
 public class UnitTests_WebMvcTest_MyController {
 
     @Autowired private MockMvc mockMvc;
-
    
     @MockBean private MyService myService;
     @MockBean private MyRepository myRepository; // IMPORTANT
@@ -29,9 +28,10 @@ public class UnitTests_WebMvcTest_MyController {
     @Test
     public void home() throws Exception {
         mockMvc.perform(get("/api/v1"))
-                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsStringIgnoringCase("home")));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(containsStringIgnoringCase("home")))
+                .andDo(print());
     }
 
     @Test
@@ -40,8 +40,9 @@ public class UnitTests_WebMvcTest_MyController {
         when(myService.get()).thenReturn(new MyEntity("Hello", "World"));
 
         mockMvc.perform(get("/api/v1/hello"))
-                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsStringIgnoringCase("hello")));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(containsStringIgnoringCase("hello")))
+                .andDo(print());
     }
 }

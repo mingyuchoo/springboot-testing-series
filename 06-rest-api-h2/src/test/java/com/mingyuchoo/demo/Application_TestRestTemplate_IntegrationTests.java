@@ -12,8 +12,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("test") // application-test.yaml
-@SpringBootTest(
-        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class Application_TestRestTemplate_IntegrationTests {
 
     @Autowired private Environment environment;

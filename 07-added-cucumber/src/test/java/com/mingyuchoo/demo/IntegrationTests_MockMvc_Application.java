@@ -38,16 +38,18 @@ public class IntegrationTests_MockMvc_Application {
     @Test
     public void home() throws Exception {
         mockMvc.perform(get("/api/v1"))
-                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsStringIgnoringCase("home")));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().string(containsStringIgnoringCase("home")))
+                .andDo(print());
     }
 
     @Test
     public void hello() throws Exception {
         mockMvc.perform(get("/api/v1/hello"))
-                .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.success").value(true));
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.success").value(true))
+                .andDo(print());
     }
 }
