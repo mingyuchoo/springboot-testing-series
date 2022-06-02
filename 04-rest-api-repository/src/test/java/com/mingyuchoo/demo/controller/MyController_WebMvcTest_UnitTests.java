@@ -15,17 +15,17 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-@WebMvcTest(MyController.class) // USE FOR UNIT TESTING OF CONTROLLER LAYER
+@WebMvcTest(MyController.class)
 public class MyController_WebMvcTest_UnitTests {
 
     @Autowired private MockMvc mockMvc;
 
-    // USE FOR UNIT TESTING OF CONTROLLER LAYER
+   
     @MockBean private MyService myService;
 
     @Test
     public void home() throws Exception {
-        mockMvc.perform(get("/api/v1/").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsStringIgnoringCase("home")));
@@ -34,10 +34,10 @@ public class MyController_WebMvcTest_UnitTests {
     @Test
     public void hello() throws Exception {
 
-        // USE FOR UNIT TESTING OF CONTROLLER LAYER
+       
         when(myService.get()).thenReturn("[service] Hello, World!");
 
-        mockMvc.perform(get("/api/v1/hello").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("api/v1/hello").accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsStringIgnoringCase("hello")));

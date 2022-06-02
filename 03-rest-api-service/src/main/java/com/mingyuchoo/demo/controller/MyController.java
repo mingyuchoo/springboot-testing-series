@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("api/v1")
 public class MyController {
     @Autowired private MyService service;
 
@@ -19,9 +19,7 @@ public class MyController {
         return "Welcome home!";
     }
 
-    @GetMapping(
-            value = "/hello",
-            produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = "/hello", produces = {MediaType.APPLICATION_JSON_VALUE})
     public String hello() {
         return service.get();
     }

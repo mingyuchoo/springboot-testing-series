@@ -34,7 +34,7 @@ public class IntegrationTests_WebTestClient_Application {
     public void home() throws Exception {
         webTestClient
                 .get()
-                .uri("/api/v1/")
+                .uri("/api/v1")
                 .exchange()
                 .expectStatus()
                 .isOk()
@@ -48,7 +48,7 @@ public class IntegrationTests_WebTestClient_Application {
     public void hello() throws Exception {
         webTestClient
                 .get()
-                .uri("/api/v1/hello")
+                .uri("api/v1/hello")
                 .exchange()
                 .expectStatus()
                 .isOk()

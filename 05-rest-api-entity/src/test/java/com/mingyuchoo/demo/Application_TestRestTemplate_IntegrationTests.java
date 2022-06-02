@@ -31,13 +31,13 @@ public class Application_TestRestTemplate_IntegrationTests {
 
     @Test
     public void home() throws Exception {
-        String result = testRestTemplate.getForObject("/api/v1/", String.class);
+        String result = testRestTemplate.getForObject("/api/v1", String.class);
         assertThat(result).containsIgnoringCase("home");
     }
 
     @Test
     public void hello() throws Exception {
-        String result = testRestTemplate.getForObject("/api/v1/hello", String.class);
+        String result = testRestTemplate.getForObject("api/v1/hello", String.class);
         assertThat(result).containsIgnoringCase("hello");
     }
 }
