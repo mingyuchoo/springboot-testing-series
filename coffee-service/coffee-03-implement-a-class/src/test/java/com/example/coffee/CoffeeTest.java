@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("원산지에 따른 로스팅된 커피 원두가 있는 상황에서")
 class CoffeeTest {
 
     //Examples:
