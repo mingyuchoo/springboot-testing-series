@@ -1,4 +1,4 @@
-# 01-added-spotless
+# 01-setup-gradle
 
 ## How to Set up in `https://start.spring.io`
 
