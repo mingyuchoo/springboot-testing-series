@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("원산지에 따른 로스팅된 커피 원두가 있는 상황에서")
 class CoffeeServiceTest {
 
     //Examples:
@@ -26,7 +25,7 @@ class CoffeeServiceTest {
     //When `커피 원두 전체보기를 요청했을 때`      -- 전체보기
     //Then `커피 원두가 목록으로 나와야 합니다.`   -- 목록
 
-    @DisplayName("커피 원두 전체보기를 요청했을 때, 커피 원두가 목록으로 나와야 합니다.")
+    @DisplayName("원산지에 따른 로스팅된 커피 원두가 있는 상황에서, 커피 원두 전체보기를 요청했을 때, 커피 원두가 목록으로 나와야 합니다.")
     @Test
     void testFindAll() throws Exception {
         CoffeeService coffeeService = new CoffeeService();
