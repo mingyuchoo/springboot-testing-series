@@ -3,6 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 	id 'com.adarshr.test-logger' version '3.2.0'
+	id 'jacoco'
 }
 
 group = 'com.example'
@@ -28,6 +29,19 @@ dependencies {
 	}
 }
 
+jacoco {
+	toolVersion = '0.8.8'
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = false
+		csv.required = false
+		html.outputLocation = layout.buildDirectory.dir('reports/tests/jacoco')
+	}
+	dependsOn test
+}
+
 testlogger {
 	theme 'plain'
 	showExceptions true
@@ -51,4 +65,9 @@ testlogger {
 tasks.named('test') {
 	useJUnitPlatform()
 	testlogger
+	jacoco {
+		enabled = true
+		destinationFile = layout.buildDirectory.file('test-results/jacoco/jacocoTest.exec').get().asFile
+	}
+	finalizedBy jacocoTestReport
 }
