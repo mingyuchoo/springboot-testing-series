@@ -3,7 +3,7 @@ server:
   servlet:
     encoding:
       force-response: true
-	  
+
 spring:
   main:
     banner-mode: off
