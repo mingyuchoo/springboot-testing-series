@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("원산지에 따른 로스팅된 커피 원두가 있는 상황에서")
-class CoffeeTest {
+class CoffeeServiceTest {
 
     //Examples:
     //| 1. 브라질 산토스
@@ -29,9 +29,9 @@ class CoffeeTest {
     @DisplayName("커피 원두 전체보기를 요청했을 때, 커피 원두가 목록으로 나와야 합니다.")
     @Test
     void testFindAll() {
-        Coffee coffee = new Coffee();
-        Assertions.assertNotNull(coffee.findAll());
-        Assertions.assertEquals(12, coffee.findAll().size());
+        CoffeeService coffeeService = new CoffeeService();
+        Assertions.assertNotNull(coffeeService.findAll());
+        Assertions.assertEquals(12, coffeeService.findAll().size());
     }
 
 }

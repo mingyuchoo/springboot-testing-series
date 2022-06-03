@@ -1,19 +1,19 @@
 # Coffee Service
 
-## coffee-01-improve-gradle 
+## coffeeService-01-improve-gradle 
 
 ### 1. improved `build.gradle`
 
 * 터미널에 테스트 결과를 출력할 수 있도록 `com.adarshr.test-logger` 를 추가했습니다.
 * `test-logger` 설정을 추가하고 `test` 타스크가 실행될 때 같이 실행되도록 했습니다.
 
-### 2. improved `com.example.coffee.CoffeeApplicationTests`
+### 2. improved `com.example.coffee.CoffeeServiceApplicationTestsonTests`
 
 * 테스트 결과를 쉽게 알아볼 수 있도록 `@DisplayName` 어노테이션을 추가했습니다.
 
 ---
 
-## coffee-02-adjust-logging
+## coffeeService-02-adjust-logging
 
 ### 3. added `logback.xml`
 
@@ -47,7 +47,7 @@ logging:
 
 ---
 
-## coffee-03-implement-a-class
+## coffeeService-03-implement-a-class
 
 ### 5. check a User Story and Acceptance Criteria
 
@@ -94,7 +94,7 @@ So that `내 입맛에 맞는 커피를 마시려고`
 
 ---
 
-## coffee-04-add-jacoco
+## coffeeService-04-add-jacoco
 
 ### 7. add `jacoco` to `build.gradle`
 
@@ -127,7 +127,7 @@ tasks.named('test') {
 
 ---
 
-## coffee-05-add-repo-to-jenkins
+## coffeeService-05-add-repo-to-jenkins
 
 * Worked in Ubuntu 22.04
 
@@ -147,8 +147,8 @@ $ touch $HOME/.ssh/authorized_keys
 $ chomod 600 $HOME/.ssh/authorized_keys
 
 $ mkdir -p $HOME/repo
-$ git init --bare $HOME/repo/coffee-service.git
-Initialized empty Git repository in /home/git/coffee-service.git
+$ git init --bare $HOME/repo/coffeeService-service.git
+Initialized empty Git repository in /home/git/coffeeService-service.git
 
 $ exit
 ```
@@ -183,7 +183,7 @@ set it up for start
 3. Freestyle project
 4. Soruce Code Management
   * Git
-  * Repository URL: git@172.18.0.1:repo/coffee-service.git
+  * Repository URL: git@172.18.0.1:repo/coffeeService-service.git
   * Credentials: create and choose one
   * Branchs to build
     * Branch Specifier: `*/feather`

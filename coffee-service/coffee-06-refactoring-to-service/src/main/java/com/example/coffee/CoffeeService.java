@@ -3,7 +3,7 @@ package com.example.coffee;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Coffee {
+public class CoffeeService {
     //Examples:
     //| 1. 브라질 산토스
     //| 2. 콜롬비아 수프리모
