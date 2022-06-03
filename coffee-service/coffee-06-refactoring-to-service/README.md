@@ -1,6 +1,10 @@
 # Coffee Service
 
+---
+
 ## coffeeService-01-improve-gradle 
+
+---
 
 ### 1. improved `build.gradle`
 
@@ -11,9 +15,9 @@
 
 * 테스트 결과를 쉽게 알아볼 수 있도록 `@DisplayName` 어노테이션을 추가했습니다.
 
----
-
 ## coffeeService-02-adjust-logging
+
+---
 
 ### 3. added `logback.xml`
 
@@ -92,9 +96,9 @@ So that `내 입맛에 맞는 커피를 마시려고`
 * Implement `Coffee`
 * Test the implemented method(function)
 
----
-
 ## coffeeService-04-add-jacoco
+
+---
 
 ### 7. add `jacoco` to `build.gradle`
 
@@ -125,9 +129,9 @@ tasks.named('test') {
 }
 ```
 
----
-
 ## coffeeService-05-add-repo-to-jenkins
+
+---
 
 * Worked in Ubuntu 22.04
 
@@ -209,3 +213,13 @@ $ git add .
 $ commit -m "some-message"
 $ git push
 ```
+
+## coffee-06-refactoring-to-service
+
+---
+
+### 11. change `Coffee*` classes to `CoffeeService*` classes
+
+* `Coffee` -> `CoffeeService`
+* `CoffeeTest` -> `CoffeeServiceTest`
+
