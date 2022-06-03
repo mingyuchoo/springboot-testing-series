@@ -85,10 +85,42 @@ So that `내 입맛에 맞는 커피를 마시려고`
   Then `"잠깐 다른 볼일 보시고 오실래요? 30분 뒤면 맛있게 로스팅된 커피 원두가 준비되거든요."라는 메시지가 나와야 한다.`
 ```
 
-### 5. add `Coffee` and `CoffeeTest`
+### 6. add `Coffee` and `CoffeeTest`
 
 * Create files
 * Add test case to `CoffeeTest`
 * Implement `Coffee`
 * Test the implemented method(function)
 
+---
+
+## coffee-04-add-jacoco
+
+### 7. add `jacoco` to `build.gradle`
+
+```groovy
+plugins {
+	id 'jacoco'
+}
+
+jacoco {
+	toolVersion = '0.8.8'
+}
+
+jacocoTestReport {
+	reports {
+		xml.required = false
+		csv.required = false
+		html.outputLocation = layout.buildDirectory.dir('reports/tests/jacoco')
+	}
+	dependsOn test
+}
+
+tasks.named('test') {
+	jacoco {
+		enabled = true
+		destinationFile = layout.buildDirectory.file('test-results/jacoco/jacocoTest.exec').get().asFile
+	}
+	finalizedBy jacocoTestReport
+}
+```
