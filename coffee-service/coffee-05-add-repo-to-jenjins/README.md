@@ -129,14 +129,83 @@ tasks.named('test') {
 
 ## coffee-05-add-repo-to-jenkins
 
+* Worked in Ubuntu 22.04
+
 ### 8. create git repo
 
-* TODO
+```bash
+$ sudo apt update
+$ sudo apt install -y openssh-server
+$ sudo apt service ssh start
+
+$ sudo useradd --system --user-group --shell /bin/bash --create-home --home-dir /home/git git
+$ sudo su - git
+
+$ mkdir -p $HOME/.ssh
+$ chmod 700 $HOME/.ssh
+$ touch $HOME/.ssh/authorized_keys
+$ chomod 600 $HOME/.ssh/authorized_keys
+
+$ mkdir -p $HOME/repo
+$ git init --bare $HOME/repo/coffee-service.git
+Initialized empty Git repository in /home/git/coffee-service.git
+
+$ exit
+```
 
 ### 9. run jenkins
 
-* TODO
+```bash
+$ sudo apt update
+$ sudo apt install -y docker.io
+$ sudo url -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+$ sudo chmod _+x /usr/local/bin/docker-compose
+$ sudo usermod -aG docker $USER
 
-### 10. build app.
+$ sudo dockerd
+```
 
-* TODO
+download jenkins docker project from <https://github.com/mingyuchoo/docker-composes>
+
+```bash
+$ cd jenkins
+$ docker network create my-net
+$ npm run docker:up
+```
+
+connect to <http://localhost:8888> and
+set it up for start
+
+#### For an new proejct
+
+1. New Item
+2. Enter an item name
+3. Freestyle project
+4. Soruce Code Management
+  * Git
+  * Repository URL: git@172.18.0.1:repo/coffee-service.git
+  * Credentials: create and choose one
+  * Branchs to build
+    * Branch Specifier: `*/feather`
+  * Build Triggers
+    * Poll SCM: check
+    * Schedule: `* * * * *`
+  * Build Environment
+    * Delete workspace brefore build starts: check
+  * Build
+    * Use Gradle Wratter
+      * Make gradlew executable: check
+    * Tasks: test
+  * Post-build Actiosns
+    * Publish JUnit test result report
+      * Test resport XMLs: `build/test-results/test/*.xml`
+    * Record JaCoCo coverage report
+  * Save
+
+### 10. Push code to repo
+
+```bash
+$ git add .
+$ commit -m "some-message"
+$ git push
+```
