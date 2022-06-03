@@ -28,7 +28,7 @@ class CoffeeServiceTest {
 
     @DisplayName("커피 원두 전체보기를 요청했을 때, 커피 원두가 목록으로 나와야 합니다.")
     @Test
-    void testFindAll() {
+    void testFindAll() throws Exception {
         CoffeeService coffeeService = new CoffeeService();
         Assertions.assertNotNull(coffeeService.findAll());
         Assertions.assertEquals(12, coffeeService.findAll().size());

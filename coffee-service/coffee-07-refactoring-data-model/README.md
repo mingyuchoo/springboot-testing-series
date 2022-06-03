@@ -223,3 +223,41 @@ $ git push
 * `Coffee` -> `CoffeeService`
 * `CoffeeTest` -> `CoffeeServiceTest`
 
+
+## coffee-06-refactoring-data-model
+
+---
+
+### 12. change `String` to `Map.Entry<Integer, String>`
+from
+```java
+List<String> coffeeList = new ArrayList<String>();
+coffeeList.add("브라질 산토스");
+coffeeList.add("콜롬비아 수프리모");
+coffeeList.add("자메이카 블루마운틴");
+coffeeList.add("에티오피아 예가체프");
+coffeeList.add("케냐 AA");
+coffeeList.add("코스타리카 따라주");
+coffeeList.add("탄자니아 AA (킬리만자로)");
+coffeeList.add("예멘 모카 마타리");
+coffeeList.add("하와이 코나");
+coffeeList.add("과테말라 안티구아");
+coffeeList.add("파나마 게이샤");
+coffeeList.add("엘살바도르");
+```
+to
+```java
+List<Map.Entry<Integer, String>> coffeeList = new ArrayList<>();
+coffeeList.add(Map.entry(1, "브라질 산토스"));
+coffeeList.add(Map.entry(2, "콜롬비아 수프리모"));
+coffeeList.add(Map.entry(3, "자메이카 블루마운틴"));
+coffeeList.add(Map.entry(4, "에티오피아 예가체프"));
+coffeeList.add(Map.entry(5, "케냐 AA"));
+coffeeList.add(Map.entry(6, "코스타리카 따라주"));
+coffeeList.add(Map.entry(7, "탄자니아 AA (킬리만자로)"));
+coffeeList.add(Map.entry(8, "예멘 모카 마타리"));
+coffeeList.add(Map.entry(9, "하와이 코나"));
+coffeeList.add(Map.entry(10, "과테말라 안티구아"));
+coffeeList.add(Map.entry(11, "파나마 게이샤"));
+coffeeList.add(Map.entry(12, "엘살바도르"));
+```
