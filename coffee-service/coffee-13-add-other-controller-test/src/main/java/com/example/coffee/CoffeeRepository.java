@@ -15,7 +15,7 @@ public class CoffeeRepository {
 
         File file = new File(this.getClass().getClassLoader().getResource("data-coffee.json").getFile());
         ObjectMapper mapper = new ObjectMapper();
-        coffeeList = mapper.readValue(file, new TypeReference<List<CoffeeEntity>>() {});
+        coffeeList = mapper.readValue(file, new TypeReference<>() {});
 
         return coffeeList;
     }

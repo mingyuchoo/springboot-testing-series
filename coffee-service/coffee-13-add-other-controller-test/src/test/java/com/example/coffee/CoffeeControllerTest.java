@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -15,7 +16,7 @@ class CoffeeControllerTest {
 
     @DisplayName("원산지에 따른 로스팅된 커피 원두가 있는 상황에서, (키오스크가 내가 만든 REST API를 호출하여) 커피 원두 전체보기를 요청했을 때, 커피 원두가 (JSON 형태의) 목록으로 나와야 합니다.")
     @Test
-    public void findAllShouldBeNotNull() {
+    void findAllShouldBeNotNull() {
 
         // Given `원산지에 따른 로스팅된 커피 원두가 있는 상황에서`
         // When `(키오스크가 내가 만든 REST API를 호출하여) 커피 원두 전체보기를 요청했을 때`
@@ -24,9 +25,9 @@ class CoffeeControllerTest {
         webTestClient.get()         // HTTP Method:GET
                 .uri("/coffee")     // URI: /coffee
                 .exchange()
-                .expectStatus().isOk()                                        // Expect: 200 OK
-                .expectHeader().contentType("application/json;charset=UTF-8") // Expect: application/json;charset=UTF-8
-                .expectBodyList(CoffeeEntity.class);                          // Expect: List<CoffeeEntity>
+                .expectStatus().isOk()                                                // Expect: 200 OK
+                .expectHeader().contentTypeCompatibleWith(MediaType.APPLICATION_JSON) // Expect: application/json;charset=UTF-8
+                .expectBodyList(CoffeeEntity.class);                                  // Expect: List<CoffeeEntity>
                 // or .expectBody(List.class) // Expect: List.class;
                 // or .expectBody().jsonPath("$[0].id").isEqualTo(1);
     }
