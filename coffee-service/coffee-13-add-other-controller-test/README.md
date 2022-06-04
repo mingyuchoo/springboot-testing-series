@@ -190,10 +190,10 @@ set it up for start
   * Repository URL: git@172.18.0.1:repo/coffee-service.git
   * Credentials: create and choose one
   * Branchs to build
-    * Branch Specifier: `*/feather`
+    * Branch Specifier: `*/feature/mgch`
   * Build Triggers
-    * Poll SCM: check
-    * Schedule: `* * * * *`
+    * Trigger builds remotely (e.g., from scripts): check
+    * Authentication Token: Jekins account's API Token
   * Build Environment
     * Delete workspace brefore build starts: check
   * Build
@@ -341,7 +341,7 @@ So that `내 입맛에 맞는 커피를 마시려고`
 ```
 
 * Web MVC에서 Controller가 외부와 상호작용하는 부분을 담당합니다.
-* Spring Framework에서 Web Layer에 controller, exception handler, filter, templates 등이 있습니다. 
+* Spring Framework에서 Web Layer에 controller, exception handler, filter, templates 등이 있습니다.
 
 ## coffee-12-refactoring-fixup-controller
 
@@ -359,7 +359,7 @@ So that `내 입맛에 맞는 커피를 마시려고`
 * `@Mock` vs. `@MockBean`
   * `@Mock`은 `@InjectMocks` 를 통해서만 의존성 주입 가능
   * `@MockBean`은 `@SpringBootTest` 를 통해서만 의존성 주입 가능
-  
+
 ### 19. controller test, controller를 REST API 요청과 응답을 할 수 있도록 수정합니다.
 
 * CoffeeController

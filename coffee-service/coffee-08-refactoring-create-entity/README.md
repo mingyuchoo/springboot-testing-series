@@ -190,10 +190,10 @@ set it up for start
   * Repository URL: git@172.18.0.1:repo/coffee-service.git
   * Credentials: create and choose one
   * Branchs to build
-    * Branch Specifier: `*/feather`
+    * Branch Specifier: `*/feature/mgch`
   * Build Triggers
-    * Poll SCM: check
-    * Schedule: `* * * * *`
+    * Trigger builds remotely (e.g., from scripts): check
+    * Authentication Token: Jekins account's API Token
   * Build Environment
     * Delete workspace brefore build starts: check
   * Build
