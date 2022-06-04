@@ -2,7 +2,7 @@
 
 ---
 
-## coffeeService-01-improve-gradle 
+## coffeeService-01-improve-gradle
 
 ---
 
@@ -37,7 +37,7 @@ server:
   servlet:
     encoding:
       force-response: true
-	  
+
 spring:
   main:
     banner-mode: off
@@ -65,11 +65,11 @@ logging:
 As a `친한 동기와 식사를 마친 직장인`
 I want `어떤 커피 원두가 있는지 확인하고 싶습니다.`
 So that `내 입맛에 맞는 커피를 마시려고`
-  
+
   Given `원산지에 따른 로스팅된 커피 원두가 있는 상황에서`
   When `커피 원두 전체보기를 요청했을 때`
   Then `커피 원두가 목록으로 나와야 합니다.`
-    
+
     Examples:
     | 1. 브라질 산토스
     | 2. 콜롬비아 수프리모
@@ -83,7 +83,7 @@ So that `내 입맛에 맞는 커피를 마시려고`
     | 10. 과테말라 안티구아
     | 11. 파나마 게이샤
     | 12. 엘살바도르
-  
+
   Given `원산지에 따른 로스팅된 커피 원두가 없는 상황에서`
   When `커피 원두 전체보기를 요청했을 때`
   Then `"잠깐 다른 볼일 보시고 오실래요? 30분 뒤면 맛있게 로스팅된 커피 원두가 준비되거든요."라는 메시지가 나와야 한다.`
@@ -151,8 +151,8 @@ $ touch $HOME/.ssh/authorized_keys
 $ chomod 600 $HOME/.ssh/authorized_keys
 
 $ mkdir -p $HOME/repo
-$ git init --bare $HOME/repo/coffeeService-service.git
-Initialized empty Git repository in /home/git/coffeeService-service.git
+$ git init --bare $HOME/repo/coffee-service.git
+Initialized empty Git repository in /home/git/coffee-service.git
 
 $ exit
 ```
@@ -187,7 +187,7 @@ set it up for start
 3. Freestyle project
 4. Soruce Code Management
   * Git
-  * Repository URL: git@172.18.0.1:repo/coffeeService-service.git
+  * Repository URL: git@172.18.0.1:repo/coffee-service.git
   * Credentials: create and choose one
   * Branchs to build
     * Branch Specifier: `*/feather`
@@ -334,9 +334,9 @@ public List<CoffeeEntity> findAll() throws IOException {
 As a `친한 동기와 식사를 마친 직장인`
 I want `어떤 커피 원두가 있는지 확인하고 싶습니다.`
 So that `내 입맛에 맞는 커피를 마시려고`
-  
+
   Given `원산지에 따른 로스팅된 커피 원두가 있는 상황에서`
-  When `(키오스크가 내가 만든 REST API를 호출하여) 커피 원두 전체보기를 요청했을 때` 
+  When `(키오스크가 내가 만든 REST API를 호출하여) 커피 원두 전체보기를 요청했을 때`
   Then `커피 원두가 (JSON 형태의) 목록으로 나와야 합니다.`
 ```
 
