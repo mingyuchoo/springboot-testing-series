@@ -180,6 +180,11 @@ $ npm run docker:up
 connect to <http://localhost:8888> and
 set it up for start
 
+#### For an Account
+
+1. create `Admin` account
+2. API Token > Add new Token
+
 #### For an new proejct
 
 1. New Item
