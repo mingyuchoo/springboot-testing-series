@@ -1,4 +1,4 @@
 package com.example.coffee.supplier.controller;
 
-public class SupllierController {
+public class SupplierController {
 }
