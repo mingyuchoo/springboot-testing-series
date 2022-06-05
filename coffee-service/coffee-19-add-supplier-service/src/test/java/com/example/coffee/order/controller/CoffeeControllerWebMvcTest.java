@@ -1,7 +1,7 @@
-package com.example.coffee.controller;
+package com.example.coffee.order.controller;
 
-import com.example.coffee.CoffeeEntity;
-import com.example.coffee.service.CoffeeService;
+import com.example.coffee.order.entity.CoffeeEntity;
+import com.example.coffee.order.service.CoffeeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

@@ -1,7 +1,7 @@
-package com.example.coffee.repository;
+package com.example.coffee.order.repository;
 
-import com.example.coffee.repository.CoffeeRepository;
-import com.example.coffee.repository.CoffeeRepositoryImpl;
+import com.example.coffee.order.repository.CoffeeRepository;
+import com.example.coffee.order.repository.CoffeeRepositoryImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

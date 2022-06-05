@@ -1,6 +1,6 @@
-package com.example.coffee.repository;
+package com.example.coffee.order.repository;
 
-import com.example.coffee.CoffeeEntity;
+import com.example.coffee.order.entity.CoffeeEntity;
 
 import java.io.IOException;
 import java.util.List;

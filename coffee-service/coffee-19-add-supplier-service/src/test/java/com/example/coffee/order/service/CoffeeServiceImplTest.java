@@ -1,7 +1,7 @@
-package com.example.coffee.service;
+package com.example.coffee.order.service;
 
-import com.example.coffee.CoffeeEntity;
-import com.example.coffee.repository.CoffeeRepository;
+import com.example.coffee.order.entity.CoffeeEntity;
+import com.example.coffee.order.repository.CoffeeRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

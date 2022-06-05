@@ -1,6 +1,6 @@
-package com.example.coffee.controller;
+package com.example.coffee.order.controller;
 
-import com.example.coffee.CoffeeEntity;
+import com.example.coffee.order.entity.CoffeeEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
