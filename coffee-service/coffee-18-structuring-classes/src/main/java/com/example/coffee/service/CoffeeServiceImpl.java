@@ -1,6 +1,8 @@
-package com.example.coffee;
+package com.example.coffee.service;
 
 
+import com.example.coffee.CoffeeEntity;
+import com.example.coffee.repository.CoffeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

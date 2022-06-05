@@ -1,5 +1,6 @@
-package com.example.coffee;
+package com.example.coffee.repository;
 
+import com.example.coffee.CoffeeEntity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Repository;
